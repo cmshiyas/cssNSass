@@ -1,0 +1,43 @@
+Intall Grunt & setup Grunt:
+
+Intall:
+
+1. Prerequisite - node to be installed in your PC. Already available for mac.
+
+For PC:
+1. Open cmd with Admin access
+2. run the command - npm install -g grunt-cli
+
+For Mac:
+1. Open terminal
+2. run the command - sudo npm -g grunt-cli
+
+Setup:
+1. create a file gruntfile.js
+content is as below
+module.exports = function(grunt) {
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.initConfig({
+        uglify: {
+            my_target: {
+                files: {
+                    '_/js/script.js': ['_/components/js/script.js']
+                }
+            }
+        }
+    })
+
+}//exports
+
+write a function in your js and tesst it - file location - _/components/js/script.js
+function test(){
+    return hello;
+}
+
+run the command from the directory location:
+
+E:\Sass\sassycompass>grunt uglify
+Running "uglify:my_target" (uglify) task
+File "_/js/script.js" created.
+
+Done, without errors.
